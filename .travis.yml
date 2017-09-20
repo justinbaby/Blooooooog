@@ -1,21 +1,11 @@
-# 参考：http://www.jianshu.com/p/5e74046e7a0f
-
-language: node_js  #设置语言
-
-node_js: stable  #设置相应的版本
-
-install:
-  - npm install  #安装hexo及插件
-
+# 参考：https://skychang.github.io/2017/01/01/Hexo-Use_Travis_CI_Auto_Deploy_Blog/
+language:  node_js
+node_js:  stable
 script:
-  - hexo cl  #清除
-  - hexo g
-  - hexo d  #生成
-
-
-branches:
-  only:
-    - master  #只监测hexo分支，hexo是我的分支的名称，可根据自己情况设置
-env:
- global:
-   - GH_REF: github.com/Trumeet/Blooooooog.git  #设置GH_REF，注意更改yourname
+  -  npm  install
+  -  hexo  cl
+after_success:
+  -  git  config  --global  user.name  "Trumeet" 
+  -  git  config  --global  user.email  "liangyuteng12345@gmail.com"
+  -  sed  -i''  "/^ *repo/s~github\.com~${GH_TOKEN}@github.com~"  _config.yml
+  -  hexo  deploy  -g
