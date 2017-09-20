@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.0 -->
+    <script>
+        window.materialVersion = "1.5.0"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+
+
+
+
+        <link rel="dns-prefetch" href="https://www.google-analytics.com"/>
+
+
+
+
+
+
+
+
+    <!-- Title -->
+    
+    <title>
+        
+            Dir 的诞生和开发历程 | 
+        
+        Yuuta
+    </title>
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="Trumeet">
+    <meta name="description" itemprop="description" content="坏耶 只是咸鱼">
+    <meta name="keywords" content="Trumeet,Yuuta,回忆,软广">
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="https://ooo.0o0.ooo/2017/06/18/5945ce2628d93.jpg">
+    <link rel="icon" sizes="192x192" href="https://ooo.0o0.ooo/2017/06/18/5945ce2628d93.jpg">
+    <link rel="apple-touch-icon" href="https://ooo.0o0.ooo/2017/06/18/5945ce2628d93.jpg">
+
+    <!--iOS -->
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Yuuta">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+        
+            <link rel=alternate type="application/atom+xml" href="https://blog.trumeet.top/atom.xml">
+        
+    
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F7F8FA;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.proxy.ustclug.org/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icon -->
+
+    <link href="https://fonts.proxy.ustclug.org/icon?family=Material+Icons" rel="stylesheet">
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://blog.trumeet.top">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Dir 的诞生和开发历程 | Yuuta">
+    <meta property="og:image" content="https://blog.trumeet.tophttps://ooo.0o0.ooo/2017/06/18/5945ce2628d93.jpg" />
+    <meta property="og:description" content="坏耶 只是咸鱼">
+    <meta property="og:article:tag" content="回忆"> <meta property="og:article:tag" content="软广"> 
+
+    
+        <meta property="article:published_time" content="Sat Jul 29 2017 00:00:00 GMT+0000" />
+        <meta property="article:modified_time" content="Wed Sep 20 2017 10:44:21 GMT+0000" />
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:title" content="Dir 的诞生和开发历程 | Yuuta">
+    <meta name="twitter:description" content="坏耶 只是咸鱼">
+    <meta name="twitter:image" content="https://blog.trumeet.tophttps://ooo.0o0.ooo/2017/06/18/5945ce2628d93.jpg">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://blog.trumeet.top" />
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="https://blog.trumeet.top/2017/07/29/begin-dir/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+
+    <!-- Analytics -->
+    
+        <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-85804209-3', 'auto');ga('send', 'pageview');
+</script>
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#初衷"><span class="post-toc-number">1.</span> <span class="post-toc-text">初衷</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Android-目录规范"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Android 目录规范</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#不规范的猥琐做法"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">不规范的猥琐做法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#插话：应用间分享用户ID"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">插话：应用间分享用户ID</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#不忍受，不认怼"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">不忍受，不认怼</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#还有一些原因"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">还有一些原因</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#让我们开始吧"><span class="post-toc-number">2.</span> <span class="post-toc-text">让我们开始吧</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#规则的概念"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">规则的概念</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#设计-APP"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">设计 APP</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第一个问题：同步规则"><span class="post-toc-number">2.2.1.</span> <span class="post-toc-text">第一个问题：同步规则</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#规则太少"><span class="post-toc-number">2.2.2.</span> <span class="post-toc-text">规则太少</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#后端程序"><span class="post-toc-number">2.2.3.</span> <span class="post-toc-text">后端程序</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#结语和感谢"><span class="post-toc-number">3.</span> <span class="post-toc-text">结语和感谢</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(https://i.loli.net/2017/07/29/597c13fc04e11.png)">
+    
+            <p class="article-headline-p">
+                Dir 的诞生和开发历程
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="https://i.loli.net/2017/09/17/59be75c136a7f.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Trumeet</strong>
+        <span>7月 29, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACWUlEQVR42u3aQZLiMBAEQP7/6d0HzISnSi3LDiJ9IsBgpQ5qUerPv6++Pnh4eHh4eHh4eC/jfeLr5/2//HTwfvKUtbHh4eHhneT9sdT+GFz7afL+9S8nY8PDw8M7z7suBnsH1z63GBseHh7ey3iTrXC+7cbDw8P7Jl4yxATcbt/x8PDw3skr/vAPwtw13qGsBQ8PDy/mtQdgJ18/cL6Hh4eHd8mrW5rKiCFf7pMyEI0QDw8P72bedUNVG9cmk7LWlJCMFg8PD+8kL9mqrrUFTELeZLrx8PDwnuWtNQokG+h8oHX0gIeHh3ect2tZTyYrLw/tr+Hh4eG9gbe2zV1rAlgLRBYPwPDw8PC28vJjrWKDO27YSpoM8PDw8J7iTYLXtUAhodZtCnh4eHg383Yt3PNmrMkY8PDw8M7z5u1Q8yAjD3Dx8PDwnuUVC+5SSdjVULUtxsXDw8Mb85KGqjw+aCcrv2dD3cPDw8O7jdcC9h565aToAAwPDw/vNl47rHwK8kmcTCgeHh7eU7zJY9ryMFn6/3gKHh4e3s28teihHeI8dCiKFh4eHt4RXh7mtp+uBRPbwgg8PDy8m3PONlrN44a7v4uHh4d3ktdeGxbuy01zXniKuoeHh4e3ldcuysng8nuShtQNW2o8PDy8G3htsNsu68n9ayEFHh4e3rO8th2qbdJaK0h1wcDDw8N7Ga99nfMm5QQPDw/v/by8ACTvJ61dxR8APDw8vIO8ZGluY4VJ60AeUuDh4eGd57VBwPyoLC8Y+bfw8PDwzvC+78LDw8PDw8PDw3vB9R83D+NfhwPGrgAAAABJRU5ErkJggg==">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/回忆/">回忆</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/软广/">软广</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Dir 的诞生和开发历程&url=https://blog.trumeet.top/2017/07/29/begin-dir/index.html&pic=https://blog.trumeet.tophttps://ooo.0o0.ooo/2017/06/18/5945ce2628d93.jpg&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Dir 的诞生和开发历程&url=https://blog.trumeet.top/2017/07/29/begin-dir/index.html&via=Trumeet" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.trumeet.top/2017/07/29/begin-dir/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://blog.trumeet.top/2017/07/29/begin-dir/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=https://blog.trumeet.top/2017/07/29/begin-dir/index.html&title=Dir 的诞生和开发历程" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 LinkedIn
+            </li>
+        </a>
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Yuuta&title=Dir 的诞生和开发历程&summary=坏耶 只是咸鱼&pics=https://blog.trumeet.tophttps://ooo.0o0.ooo/2017/06/18/5945ce2628d93.jpg&url=https://blog.trumeet.top/2017/07/29/begin-dir/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+        <a class="post_share-link" href="https://telegram.me/share/url?url=https://blog.trumeet.top/2017/07/29/begin-dir/index.html&text=Dir 的诞生和开发历程" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Telegram
+            </li>
+        </a>
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>Dir —— Trumeet 在 2017年元旦开始的项目，专门治理Android上流氓软件/不规范的软件在存储卡乱存储文件，还你一个整洁的存储空间。这篇文章介绍我开发它的经历和初衷。Dir：<a href="https://dir.trumeet.top" target="_blank" rel="external">https://dir.trumeet.top</a></p>
+<p><em>（顶部图片：atony）</em></p>
+<h1 id="初衷"><a href="#初衷" class="headerlink" title="初衷"></a>初衷</h1><p>开发它的初心，还要从一次随意浏览手机开始说起。</p>
+<p>某一天，我浏览手机里的文件，发现存储卡里面有许多APP乱创建的内容，它们肆无忌惮地把自己的 <code>缓存</code>、<code>日志</code> 甚至 <code>广告</code> 和 <code>用户标识</code> 存储在用户的 SD 卡里面。这也就像你的电脑硬盘里本应该是放你的文档、照片的地方，却杂乱无章地堆放了各种垃圾、小广告 还有你的隐私。甚至有些 APP 把临时图片/视频也丢进存储卡，还不忘及时删除或者加上 <code>.nomedia</code> 文件，这就导致我的 <code>Google 相册</code> 总提示我 <code>要不要备份xx缓存目录</code>.. 我很生气，这是我的个人目录，你们这样子随意丢垃圾肯定是不规范的。</p>
+<h2 id="Android-目录规范"><a href="#Android-目录规范" class="headerlink" title="Android 目录规范"></a>Android 目录规范</h2><p>Android 文件系统有如下目录区分：</p>
+<ul>
+<li><p>私有目录（内部）</p>
+<p>位于 <code>/data/data/&lt;包名&gt;/</code> 下，存放应用的私有内容，其他应用没有授权是无法访问的。它被设计为 <code>私有</code>，也就是说 <code>一般不和其他人共享，比较私密的内容</code>，用户需要访问也需要 <code>ROOT</code>。</p>
+<p>在这个目录中，我们通常这样安排，如果你去随意打开一个应用的私有目录，它一般也是这样的：</p>
+<p><code>cache</code> ：缓存。里面的文件大小会在 <code>应用详情 -&gt; 缓存大小</code> 里面显示，用户可以通过 <code>清除缓存</code> 删掉它的内容，所以不能放如 <code>设置</code> 等重要内容。</p>
+<p><code>databases</code>： 数据库目录，里面存放数据库。</p>
+<p><code>files</code> ： 文件目录，随意安排。</p>
+<p><code>shared_prefs</code> ： 设置（SP）目录。</p>
+<p>以上是常用的目录形式，当然，应用不按照规定也无伤大雅。因为这是放在私有目录中的，其他人（包括用户）都是无法访问的。</p>
+</li>
+<li><p>私有目录（外部）</p>
+<p>位于 <code>SD卡/Android/data/&lt;包名&gt;/</code> 下，由于是 <code>外部</code>，就放在 SD 卡里，用户可以访问。自身程序可以无需存储权限访问，其他应用或用户需要存储卡权限。</p>
+<p>由于任何人都可以访问，它一般放置一些不太重要、不太保密的内容。里面一般有：</p>
+<p><code>files</code> ： 同上面 files</p>
+<p><code>cache</code> ： 同上面 cache</p>
+</li>
+</ul>
+<h2 id="不规范的猥琐做法"><a href="#不规范的猥琐做法" class="headerlink" title="不规范的猥琐做法"></a>不规范的猥琐做法</h2><p>也就是说，应用如果要存放缓存、广告、日志 都可以无需存储权限，放进自身目录，既保护了数据安全、方便系统统一管理（如用户 清除缓存），还保持存储卡简洁。最重要的，还能无需存储权限。但是就有一些应用，不知道是开发人员吔屎了、应用间分享数据（可以用 FileProvider）、需要应用间分享用户ID（非常恶心的做法，详见下文），还是怎么着.. 不管怎么说，他们都带来了很多副作用。</p>
+<h2 id="插话：应用间分享用户ID"><a href="#插话：应用间分享用户ID" class="headerlink" title="插话：应用间分享用户ID"></a>插话：应用间分享用户ID</h2><p>许多流氓软件都为了统计或者追踪用户，把自己获取到的用户硬件ID（隐私信息，如 IMEI、Mac地址） 存放到存储卡，多个应用共享。比如说，有 10 个应用带有XX会读取隐私的SDK，它们只要有一个获取了手机权限，就会把拿到的隐私存到存储卡，这样其他9个只需存储权限就可以获取到用户ID，从而追踪用户、共享情报了。这是非常侵害用户隐私的行为，因为这个ID是终身的，和硬件绑定的，且唯一的。有一次，我在存储卡根目录发现了一个叫 <code>.imei</code> 的文件，打开看里面写着一串东西，应该就是某毒瘤获取到的隐私（IMEI）吧。</p>
+<h2 id="不忍受，不认怼"><a href="#不忍受，不认怼" class="headerlink" title="不忍受，不认怼"></a>不忍受，不认怼</h2><p>见过一句话：</p>
+<blockquote>
+<p>要么忍受，要么改变。</p>
+</blockquote>
+<p>作为强迫症，我无法忍受自己的手机被肆意丢垃圾。我想起了酷安常见的一种拦截创建目录的方法：<code>使用同名文件替换文件夹</code>。这是由于 Unix 文件系统所致，替换后再操作会抛出 <code>Not a dictionary</code> 异常，这也就阻止瞎**创建了。Dir 有了雏形——专治随意创建。 Dir 也就是 <code>目录</code> 的简写（搞过 CMD 的童鞋应该知道）。</p>
+<h2 id="还有一些原因"><a href="#还有一些原因" class="headerlink" title="还有一些原因"></a>还有一些原因</h2><p>还有一些原因，让我上了 Dir 的大船：</p>
+<ul>
+<li>市面上某些垃圾清理大师 <code>广告太多</code>，见过酷安某评论，清理完弹出女尸广告。我想找一款 <code>简单，无杂质</code> 的清理。</li>
+<li>还有些比较良心的清理需要 ROOT。</li>
+<li>大多数清理工具对小众APP、个人作品支持较差。</li>
+</ul>
+<p>为此，Dir 基本已定型，可以开始开发了。</p>
+<h1 id="让我们开始吧"><a href="#让我们开始吧" class="headerlink" title="让我们开始吧"></a>让我们开始吧</h1><p>（原谅这节没写多少东西，因为许多 Bug 修完就忘了 &gt;&lt;）</p>
+<h2 id="规则的概念"><a href="#规则的概念" class="headerlink" title="规则的概念"></a>规则的概念</h2><p>由于 Dir 不是针对规范路径的清理，也就无法根据通配符、表达式等方式进行匹配垃圾。所以我想到了 <code>规则数据库</code> 的方式，由客户端下载安装最新云端规则，然后根据规则进行清理。每一条规则有一个路径，对应一个APP，一个标题，还有其他属性。</p>
+<h2 id="设计-APP"><a href="#设计-APP" class="headerlink" title="设计 APP"></a>设计 APP</h2><p>有了目标，我开始开发 Dir。最初就准备做一个 Activity，两个卡片——<code>同步规则</code> 和 <code>扫描</code>。但最后，放弃了这个想法。</p>
+<p>很快地，第一个 Beta 发布了。我在酷安邀请大家来参与公测，测试中，也发现了许多问题。</p>
+<p>逐一修复后，觉得差不多了，便发布了正式版。反响很好，用户都表示 【神器】.. 也鼓励我继续开发它。</p>
+<p>人多力量大。后来，我还加入了 规则贡献 等功能，通过给我提交垃圾文件规则，可以拿到完整版的兑换码，鼓励大家一起来建设这个项目。</p>
+<p>许多用户反馈 界面太丑，我在5月份更新了 UI，全面的 Material 风格，让 Dir 用着更舒服..</p>
+<p>许多热心用户来反馈问题，更有帮我 设计、画图、制作官网的热心<em>基佬</em>，他们很大地帮助了 Dir 的进步。</p>
+<p>以下是我遇到的一些问题：</p>
+<h3 id="第一个问题：同步规则"><a href="#第一个问题：同步规则" class="headerlink" title="第一个问题：同步规则"></a>第一个问题：同步规则</h3><p>如何同步？由于我不懂数据库，最初，我是每次同步时删除所有本地规则，然后再下载、保存.. 后来发布一段时间，觉得这样太慢。所以换成了 <code>增量</code> 的方案，先将本地规则路径存入 <code>Set</code>，然后在下载云端数据后每次保存前使用 <code>contains</code> 判断是否本地已有，如果有就跳过。这样大幅度提高了效率。</p>
+<p>在这样发布一段时间后，又遇到了新的问题：</p>
+<p><strong>本地重复</strong>。由于规则没有一个固定格式，就导致一旦云端的路径修改（<code>ABC</code> 变成了 <code>/ABC</code>），实际效果相同，但是在<code>contains</code> 的时候就被认为两条，最终多次存储，导致重复。最终，我将每条路径都进行了处理，统一为 <code>/XXX</code> 的形式，保证了本地无重复。</p>
+<p><strong>本地现有规则不会更新</strong> 如果某规则在云端进行了更新（如标题变更），本地在判断时就会跳过，从而不会更新。为此，我更换了思路，使用SQL的 <code>unique</code> 功能，然后每次不进行本地判断，使用目录作为唯一列，直接存储。这样就会在本地已有这个路径的时候更新这条规则的详情，从而不创建新的项。这样做好处就在于解决了这两个问题，但是速度会变慢。</p>
+<h3 id="规则太少"><a href="#规则太少" class="headerlink" title="规则太少"></a>规则太少</h3><p>最初只有几十条规则，有些热心用户邮件发来了一些，我需要每次都手动加入后台，数量少还很累。于是，<strong>用户贡献规则</strong> 的想法便萌生了。起初，我准备允许用户 <code>提交</code>、<code>修改</code>、<code>下架</code> 这三个操作，但是觉得工作量太大，最终只保留了 <code>提交</code>，用户手机上编辑规则后，提交管理员审核，随后再存入数据库。最终规则已过千条，支持许多软件。</p>
+<h3 id="后端程序"><a href="#后端程序" class="headerlink" title="后端程序"></a>后端程序</h3><p>Telegram 群里大佬说，要尽可能地少把数据放到客户端。所以按照正常做法，规则提交等功能都是调用后台程序完成的。最初为了图省事，直接用的 LeanCloud 云函数（如同 FireBase Function），但简直天价，最低 6RMB/天，价格感人。然后，我借着组VPS的机会自己琢磨了后端，写了 RestFul API （也没有读过什么规范，反正自己够用就行 大雾），这样就能节省很多开支，而且程序完全由自己做主，自由、安全。</p>
+<blockquote>
+<p>详见：<a href="https://blog.trumeet.top/2017/06/14/webservlet-jetty-appserver/">https://blog.trumeet.top/2017/06/14/webservlet-jetty-appserver/</a></p>
+</blockquote>
+<h1 id="结语和感谢"><a href="#结语和感谢" class="headerlink" title="结语和感谢"></a>结语和感谢</h1><p>开发中还遇到了许多问题，我都在尝试一一解决，在这个项目中，我也涨了不少姿势。这个项目也受到了大家的好评。开发它7个月了，我没有停下，努力把它做得更好，回报各位的支持。</p>
+<p>以下是 Dir 比较重要版本的截图和历史，留作纪念：</p>
+<ul>
+<li><p>1.0 Beta 最初版 （1月12日）</p>
+<p><img src="https://i.loli.net/2017/07/29/597c0ec4a78f9.png" alt="1.0.png"><img src="https://i.loli.net/2017/07/29/597c0ec4dde1f.png" alt="1.0-1.png"></p>
+</li>
+<li><p>1.5 第一个正式版（1月18日）</p>
+<p>界面和最初一样</p>
+</li>
+<li><p>规则提交工具 发布首个测试版，开始接受贡献规则（4月17日）</p>
+</li>
+<li><p>v1.31_build38-beta 界面大改，全面 Material 设计 （5月1日）</p>
+<p><img src="https://i.loli.net/2017/07/29/597c101e67249.png" alt="1.31.png"></p>
+<p><img src="https://i.loli.net/2017/07/29/597c101e66103.png" alt="1.31-1.png"><img src="https://i.loli.net/2017/07/29/597c101e84b49.png" alt="1.31-2.png"></p>
+</li>
+</ul>
+<p>硬广时间：非常感谢这个项目，让我学到了很多东西，也感谢所有为Dir做出贡献的人，它仍在继续，会做得更好！</p>
+<hr>
+<p><a href="https://dir.trumeet.top" target="_blank" rel="external">文章看完了，带走一只Dir</a> （这个主页也是热心用户 neoFelhz 帮忙设计的 &gt;&lt;）</p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #757575;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load"> 
+    <button class="disqus_click_btn" style="display: none">阅读评论（请确保 disqus 可以正常加载）</button>
+</div>
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://blog.trumeet.top/2017/07/29/begin-dir/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://blog.trumeet.top/2017/07/29/begin-dir/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/ls-javascript" id="disqus-lazy-load-script">
+    $.ajax({
+        url: 'https://disqus.com/next/config.json',
+        timeout: 4000,
+        type: 'GET',
+        success: (function() {
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//hexo-trumeet-top.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+            $('.btn_click_load').css('display','none');
+        })(),
+        error: function() {
+          $('.btn_click_load').css('display','block');
+        }
+    });
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//hexo-trumeet-top.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+  	
+
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2017/09/12/new-way-access-hidden-api/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/07/13/why-trumeet/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(https://ooo.0o0.ooo/2017/06/12/593e0e3425699.jpg);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="https://i.loli.net/2017/09/17/59be75c136a7f.jpg" alt="Trumeet's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        trumeetc@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto:trumeetc@gmail.com" target="_blank" title="邮件">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        邮件
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="https://trumeet.top" title="TRUMEET.TOP">
+                
+                    <i class="material-icons sidebar-material-icons">arrow_back</i>
+                
+                TRUMEET.TOP
+            </a>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+        <li>
+            <a href="/links" title="大佬们">
+                
+                    <i class="material-icons sidebar-material-icons">link</i>
+                
+                大佬们
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/gallery" title="图片集">
+                
+                    <i class="material-icons sidebar-material-icons">image</i>
+                
+                图片集
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/tags" title="标签云">
+                
+                    <i class="material-icons sidebar-material-icons">bookmark</i>
+                
+                标签云
+            </a>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">17</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/Trumeet" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+        <a href="http://weibo.com/2430367317" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo">
+                <span class="visuallyhidden">Weibo</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://www.github.com/trumeet" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+        <a href="https://www.zhihu.com/people/trumeet" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-zhihu">
+                <span class="visuallyhidden">Zhihu</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Bilibili -->
+    
+        <a href="http://space.bilibili.com/40182983/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-bilibili">
+                <span class="visuallyhidden">Bilibili</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Telegram -->
+    
+        <a href="https://t.me/trumeet" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-telegram">
+                <span class="visuallyhidden">Telegram</span>
+            </button><!--
+     --></a>
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;2017&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Yuuta
+            
+                <br>
+                
+                    <a href="https://blog.trumeet.top/2017/07/13/why-trumeet/">本博客均为原创文章，未经作者允许，严禁转载！</a>
+                
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+    
+        <script>lsloader.load("sm_js","/js/smoothscroll.js?lOy/ACj5suSNi7ZVFVbpFQ==", true)</script>
+    
+
+
+
+
+
+
+
+   <!-- 使用 DISQUS js 代码 -->
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
